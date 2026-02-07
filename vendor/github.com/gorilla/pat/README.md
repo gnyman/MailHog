@@ -1,11 +1,11 @@
-pat
-===
-[![GoDoc](https://godoc.org/github.com/gorilla/pat?status.svg)](https://godoc.org/github.com/gorilla/pat)
-[![Build Status](https://travis-ci.org/gorilla/pat.svg?branch=master)](https://travis-ci.org/gorilla/pat)
+# pat
 
-### How to use?
+![testing](https://github.com/gorilla/pat/actions/workflows/test.yml/badge.svg)
+[![codecov](https://codecov.io/github/gorilla/pat/branch/main/graph/badge.svg)](https://codecov.io/github/gorilla/pat)
+[![godoc](https://godoc.org/github.com/gorilla/pat?status.svg)](https://godoc.org/github.com/gorilla/pat)
+[![sourcegraph](https://sourcegraph.com/github.com/gorilla/pat/-/badge.svg)](https://sourcegraph.com/github.com/gorilla/pat?badge)
 
-pat is pretty simple. The documentation lives [here](http://www.gorillatoolkit.org/pkg/pat).
+![Gorilla Logo](https://github.com/gorilla/.github/assets/53367916/d92caabf-98e0-473e-bfbf-ab554ba435e5)
 
 ### Install
 With a properly configured Go toolchain:
@@ -48,13 +48,11 @@ func deleteOneThing(wr http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-    router := pat.New()
+	router := pat.New()
 
 	router.Get("/things", getAllTheThings)
-
-    router.Put("/things/{id}", putOneThing)
-    router.Delete("/things/{id}", deleteOneThing)
-
+	router.Put("/things/{id}", putOneThing)
+	router.Delete("/things/{id}", deleteOneThing)
 	router.Get("/", homeHandler)
 
 	http.Handle("/", router)
@@ -64,7 +62,8 @@ func main() {
 }
 ```
 Notice how the routes descend? That's because Pat will take the first route
-that matches. For your own testing, take the line ```router.Get("/",
+that matches.  
+For your own testing, take the line ```router.Get("/",
 homeHandler)``` and put it above the other routes and run the example. When you
-try to curl any of the routes, you'll only get what the homeHandler returns.
+try to curl any of the routes, you'll only get what the homeHandler returns.  
 Design your routes carefully.

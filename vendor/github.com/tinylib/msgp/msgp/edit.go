@@ -58,7 +58,7 @@ func HasKey(key string, raw []byte) bool {
 		return false
 	}
 	var field []byte
-	for i := uint32(0); i < sz; i++ {
+	for range sz {
 		field, bts, err = ReadStringZC(bts)
 		if err != nil {
 			return false
@@ -198,6 +198,7 @@ func resizeMap(raw []byte, delta int64) []byte {
 		if cap(raw)-len(raw) >= 2 {
 			raw = raw[0 : len(raw)+2]
 			copy(raw[5:], raw[3:])
+			raw[0] = mmap32
 			big.PutUint32(raw[1:], uint32(sz+delta))
 			return raw
 		}
