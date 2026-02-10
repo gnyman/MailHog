@@ -9,13 +9,13 @@ import (
 
 	"github.com/gorilla/pat"
 	"github.com/ian-kent/go-log/log"
-	"github.com/gnyman/MailHog-Server/api"
-	cfgapi "github.com/gnyman/MailHog-Server/config"
-	"github.com/gnyman/MailHog-Server/smtp"
-	"github.com/gnyman/MailHog-UI/assets"
-	cfgui "github.com/gnyman/MailHog-UI/config"
-	"github.com/gnyman/MailHog-UI/web"
-	cfgcom "github.com/gnyman/MailHog/config"
+	"github.com/gnyman/MailBoar-Server/api"
+	cfgapi "github.com/gnyman/MailBoar-Server/config"
+	"github.com/gnyman/MailBoar-Server/smtp"
+	"github.com/gnyman/MailBoar-UI/assets"
+	cfgui "github.com/gnyman/MailBoar-UI/config"
+	"github.com/gnyman/MailBoar-UI/web"
+	cfgcom "github.com/gnyman/MailBoar/config"
 	"github.com/mailhog/http"
 	"github.com/mailhog/mhsendmail/cmd"
 	"golang.org/x/crypto/bcrypt"
@@ -42,7 +42,7 @@ func configure() {
 
 func main() {
 	if len(os.Args) > 1 && (os.Args[1] == "-version" || os.Args[1] == "--version") {
-		fmt.Println("MailHog version: " + version)
+		fmt.Println("MailBoar version: " + version)
 		os.Exit(0)
 	}
 

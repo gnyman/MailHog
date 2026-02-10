@@ -1,20 +1,20 @@
-MailHog [ ![Download](https://img.shields.io/github/release/mailhog/MailHog.svg) ](https://github.com/mailhog/MailHog/releases/tag/v1.0.0) [![GoDoc](https://godoc.org/github.com/mailhog/MailHog?status.svg)](https://godoc.org/github.com/mailhog/MailHog) [![Build Status](https://travis-ci.org/mailhog/MailHog.svg?branch=master)](https://travis-ci.org/mailhog/MailHog)
+MailBoar [ ![Download](https://img.shields.io/github/release/gnyman/MailBoar.svg) ](https://github.com/gnyman/MailBoar/releases/tag/v1.0.0) [![GoDoc](https://godoc.org/github.com/gnyman/MailBoar?status.svg)](https://godoc.org/github.com/gnyman/MailBoar) [![Build Status](https://travis-ci.org/gnyman/MailBoar.svg?branch=master)](https://travis-ci.org/gnyman/MailBoar)
 =========
 
 Inspired by [MailCatcher](https://mailcatcher.me/), easier to install.
 
-* Download and run MailHog
+* Download and run MailBoar
 * Configure your outgoing SMTP server
 * View your outgoing email in a web UI
 * Release it to a real mail server
 
-Built with Go - MailHog runs without installation on multiple platforms.
+Built with Go - MailBoar runs without installation on multiple platforms.
 
 ### Overview
 
-MailHog is an email testing tool for developers:
+MailBoar is an email testing tool for developers:
 
-* Configure your application to use MailHog for SMTP delivery
+* Configure your application to use MailBoar for SMTP delivery
 * View messages in the web UI, or retrieve them with the JSON API
 * Optionally release messages to real SMTP servers for delivery
 
@@ -26,10 +26,10 @@ MailHog is an email testing tool for developers:
 
 #### MacOS
 ```bash
-brew update && brew install mailhog
+brew update && brew install mailboar
 ```
 
-Then, start MailHog by running `mailhog` in the command line.
+Then, start MailBoar by running `mailboar` in the command line.
 
 #### Debian / Ubuntu Go < v1.18
 ```bash
@@ -37,25 +37,25 @@ sudo apt-get -y install golang-go
 go get github.com/mailhog/MailHog
 ```
 
-#### Go >= v1.17 (Debian Bookworm) 
+#### Go >= v1.17 (Debian Bookworm)
 ```bash
 sudo apt-get -y install golang-go
 go install github.com/mailhog/MailHog@latest
 ```
 
-Then, start MailHog by running `/path/to/MailHog` in the command line.
+Then, start MailBoar by running `/path/to/MailBoar` in the command line.
 
-E.g. the path to Go's bin files on Ubuntu is `~/go/bin/`, so to start the MailHog run:
+E.g. the path to Go's bin files on Ubuntu is `~/go/bin/`, so to start the MailBoar run:
 
 ```bash
-~/go/bin/MailHog
+~/go/bin/MailBoar
 ```
 
 #### FreeBSD
 ```bash
-pkg install mailhog
-sysrc mailhog_enable="YES"
-service mailhog start
+pkg install mailboar
+sysrc mailboar_enable="YES"
+service mailboar start
 ```
 
 #### Docker
@@ -63,14 +63,14 @@ service mailhog start
 
 ### Configuration
 
-Check out how to [configure MailHog](/docs/CONFIG.md), or use the default settings:
+Check out how to [configure MailBoar](/docs/CONFIG.md), or use the default settings:
   * the SMTP server starts on port 1025
   * the HTTP server starts on port 8025
   * in-memory message storage
 
 ### Features
 
-See [MailHog libraries](docs/LIBRARIES.md) for a list of MailHog client libraries.
+See [MailBoar libraries](docs/LIBRARIES.md) for a list of MailBoar client libraries.
 
 * ESMTP server implementing RFC5321
 * Support for SMTP AUTH (RFC4954) and PIPELINING (RFC2920)
@@ -82,7 +82,7 @@ See [MailHog libraries](docs/LIBRARIES.md) for a list of MailHog client librarie
   * See [Introduction to Jim](/docs/JIM.md) for more information
 * HTTP API to list, retrieve and delete messages
   * See [APIv1](/docs/APIv1.md) and [APIv2](/docs/APIv2.md) documentation for more information
-* [HTTP basic authentication](docs/Auth.md) for MailHog UI and API
+* [HTTP basic authentication](docs/Auth.md) for MailBoar UI and API
 * Multipart MIME support
 * Download individual MIME parts
 * In-memory message storage
@@ -92,11 +92,11 @@ See [MailHog libraries](docs/LIBRARIES.md) for a list of MailHog client librarie
 
 #### sendmail
 
-[mhsendmail](https://github.com/mailhog/mhsendmail) is a sendmail replacement for MailHog.
+[mhsendmail](https://github.com/mailhog/mhsendmail) is a sendmail replacement for MailBoar.
 
-It redirects mail to MailHog using SMTP.
+It redirects mail to MailBoar using SMTP.
 
-You can also use `MailHog sendmail ...` instead of the separate mhsendmail binary.
+You can also use `MailBoar sendmail ...` instead of the separate mhsendmail binary.
 
 Alternatively, you can use your native `sendmail` command by providing `-S`, for example:
 
@@ -113,15 +113,15 @@ sendmail_path = /usr/sbin/sendmail -S mail:1025
 
 #### Web UI
 
-![Screenshot of MailHog web interface](/docs/MailHog.png "MailHog web interface")
+![Screenshot of MailBoar web interface](/docs/MailHog.png "MailBoar web interface")
 
 ### Contributing
 
-MailHog is a rewritten version of [MailHog](https://github.com/ian-kent/MailHog), which was born out of [M3MTA](https://github.com/ian-kent/M3MTA).
+MailBoar is a rewritten version of [MailHog](https://github.com/ian-kent/MailHog), which was born out of [M3MTA](https://github.com/ian-kent/M3MTA).
 
-Clone this repository to ```$GOPATH/src/github.com/mailhog/MailHog``` and type ```make deps```.
+Clone this repository to ```$GOPATH/src/github.com/gnyman/MailBoar``` and type ```make deps```.
 
-See the [Building MailHog](/docs/BUILD.md) guide.
+See the [Building MailBoar](/docs/BUILD.md) guide.
 
 Requires Go 1.4+ to build.
 

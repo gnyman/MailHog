@@ -1,19 +1,19 @@
-Building MailHog
+Building MailBoar
 ================
 
-MailHog is built using `make`, and using [this Makefile](../Makefile).
+MailBoar is built using `make`, and using [this Makefile](../Makefile).
 
-If you aren't making any code changes, you can install MailHog using
+If you aren't making any code changes, you can install MailBoar using
 `go get github.com/mailhog/MailHog`, since [mailhog/MailHog-UI/assets/assets.go](https://github.com/mailhog/MailHog-UI/blob/master/assets/assets.go)
 is already pre-compiled and committed to this repository.
 
 ### Why do I need a Makefile?
 
-MailHog has HTML, CSS and Javascript assets which need to be converted
+MailBoar has HTML, CSS and Javascript assets which need to be converted
 to a go source file using [go-bindata](https://github.com/jteeuwen/go-bindata).
 
 This must happen before running `go build` or `go install` to avoid compilation
-errors (e.g., `no buildable Go source files in MailHog-UI/assets`).
+errors (e.g., `no buildable Go source files in MailBoar-UI/assets`).
 
 ### go generate
 

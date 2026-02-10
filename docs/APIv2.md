@@ -1,4 +1,4 @@
-MailHog API v2
+MailBoar API v2
 ==============
 
 The v2 API is hopefully less of a mess than v1.

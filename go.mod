@@ -1,10 +1,10 @@
-module github.com/gnyman/MailHog
+module github.com/gnyman/MailBoar
 
 go 1.25.5
 
 require (
-	github.com/gnyman/MailHog-Server v0.0.0
-	github.com/gnyman/MailHog-UI v1.0.1
+	github.com/gnyman/MailBoar-Server v0.0.0
+	github.com/gnyman/MailBoar-UI v1.0.1
 	github.com/gorilla/pat v1.0.2
 	github.com/ian-kent/envconf v0.0.0-20141026121121-c19809918c02
 	github.com/ian-kent/go-log v0.0.0-20160113211217-5731446c36ab
@@ -34,6 +34,6 @@ require (
 )
 
 replace (
-	github.com/gnyman/MailHog-Server => ./MailHog-Server
-	github.com/gnyman/MailHog-UI => ./MailHog-UI
+	github.com/gnyman/MailBoar-Server => ./MailBoar-Server
+	github.com/gnyman/MailBoar-UI => ./MailBoar-UI
 )

@@ -1,21 +1,21 @@
 # Architecture
 
-MailHog is an email testing tool that captures SMTP messages and displays them in a web UI. It runs as a single binary with three subsystems: an SMTP server, a REST API, and a web UI.
+MailBoar is an email testing tool that captures SMTP messages and displays them in a web UI. It runs as a single binary with three subsystems: an SMTP server, a REST API, and a web UI.
 
 ## Repository Structure
 
 This is a monorepo. The main binary lives at the root, and the two core packages are embedded as subdirectories:
 
 ```
-MailHog/
+MailBoar/
 ├── main.go                  # Entry point, wires everything together
 ├── config/                  # Common config (auth, web path)
-├── MailHog-Server/          # SMTP server + API backend
+├── MailBoar-Server/         # SMTP server + API backend
 │   ├── smtp/                #   SMTP listener and session handler
 │   ├── api/                 #   REST API (v1 + v2)
 │   ├── config/              #   Server config (ports, storage, release settings)
 │   └── websockets/          #   WebSocket hub for live updates
-├── MailHog-UI/              # Web frontend
+├── MailBoar-UI/             # Web frontend
 │   ├── assets/              #   Static files (JS, CSS, templates, images)
 │   │   └── assets.go        #   Compiled binary blob (go-bindata)
 │   ├── web/                 #   Template rendering + route setup
@@ -112,22 +112,22 @@ The target SMTP server defaults to `localhost:25` and is configured via:
 
 ## UI Assets
 
-The UI is an AngularJS 1.3 app. Source files live in `MailHog-UI/assets/` (templates, JS, CSS). These are compiled into `assets/assets.go` using `go-bindata`, which embeds them in the binary.
+The UI is an AngularJS 1.3 app. Source files live in `MailBoar-UI/assets/` (templates, JS, CSS). These are compiled into `assets/assets.go` using `go-bindata`, which embeds them in the binary.
 
 To regenerate after editing UI files:
 ```bash
-go-bindata -pkg assets -o MailHog-UI/assets/assets.go MailHog-UI/assets/...
+go-bindata -pkg assets -o MailBoar-UI/assets/assets.go MailBoar-UI/assets/...
 ```
 
 ## Building
 
 ```bash
-go build -o MailHog .
+go build -o MailBoar .
 ```
 
 Cross-compile (static, no CGO):
 ```bash
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o MailHog_linux_amd64 .
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o MailBoar_linux_amd64 .
 ```
 
 ## Go Module Setup
@@ -135,8 +135,8 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o MailHog_linux_amd64 .
 The root `go.mod` uses `replace` directives to point to the local subdirectories:
 ```
 replace (
-    github.com/gnyman/MailHog-Server => ./MailHog-Server
-    github.com/gnyman/MailHog-UI => ./MailHog-UI
+    github.com/gnyman/MailBoar-Server => ./MailBoar-Server
+    github.com/gnyman/MailBoar-UI => ./MailBoar-UI
 )
 ```
 

@@ -1,16 +1,16 @@
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
-# github.com/gnyman/MailHog-Server v0.0.0 => ./MailHog-Server
+# github.com/gnyman/MailBoar-Server v0.0.0 => ./MailBoar-Server
 ## explicit; go 1.25.5
-github.com/gnyman/MailHog-Server/api
-github.com/gnyman/MailHog-Server/config
-github.com/gnyman/MailHog-Server/smtp
-github.com/gnyman/MailHog-Server/websockets
-# github.com/gnyman/MailHog-UI v1.0.1 => ./MailHog-UI
+github.com/gnyman/MailBoar-Server/api
+github.com/gnyman/MailBoar-Server/config
+github.com/gnyman/MailBoar-Server/smtp
+github.com/gnyman/MailBoar-Server/websockets
+# github.com/gnyman/MailBoar-UI v1.0.1 => ./MailBoar-UI
 ## explicit; go 1.25.5
-github.com/gnyman/MailHog-UI/assets
-github.com/gnyman/MailHog-UI/config
-github.com/gnyman/MailHog-UI/web
+github.com/gnyman/MailBoar-UI/assets
+github.com/gnyman/MailBoar-UI/config
+github.com/gnyman/MailBoar-UI/web
 # github.com/gorilla/context v1.1.2
 ## explicit; go 1.20
 github.com/gorilla/context
@@ -82,5 +82,5 @@ gopkg.in/mgo.v2/internal/sasl
 gopkg.in/mgo.v2/internal/scram
 # gopkg.in/yaml.v3 v3.0.1
 ## explicit
-# github.com/gnyman/MailHog-Server => ./MailHog-Server
-# github.com/gnyman/MailHog-UI => ./MailHog-UI
+# github.com/gnyman/MailBoar-Server => ./MailBoar-Server
+# github.com/gnyman/MailBoar-UI => ./MailBoar-UI

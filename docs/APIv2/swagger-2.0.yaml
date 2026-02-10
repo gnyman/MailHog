@@ -2,7 +2,7 @@ swagger: '2.0'
 
 info:
   version: "2.0.0"
-  title: MailHog API
+  title: MailBoar API
 
 paths:
   /api/v2/messages:

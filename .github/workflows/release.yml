@@ -50,14 +50,14 @@ jobs:
           if [ "$GOOS" = "windows" ]; then
             EXT=".exe"
           fi
-          OUTPUT="MailHog_${GOOS}_${GOARCH}${EXT}"
+          OUTPUT="MailBoar_${GOOS}_${GOARCH}${EXT}"
           go build -ldflags "-X main.version=${VERSION}" -o "${OUTPUT}" .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MailHog_${{ matrix.goos }}_${{ matrix.goarch }}
-          path: MailHog_*
+          name: MailBoar_${{ matrix.goos }}_${{ matrix.goarch }}
+          path: MailBoar_*
 
   release:
     needs: build
